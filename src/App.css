@@ -1,0 +1,198 @@
+:root {
+  --light-bg-color: #f4f4f4;
+  --flashy-blue-color: #3f6b94;
+  --deep-blue-color: #ef7d32;
+}
+
+*,*::before,*::aftrer {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--light-bg-color);
+}
+
+.container {
+  margin: 1rem auto;
+  width: 95%;
+  text-align: center;
+  border-radius: 1rem;
+  background: linear-gradient(20deg, var(--flashy-blue-color), rgba(63,107,148,0.497));
+  border: 2px solid var(--flashy-blue-color);
+}
+
+.shape__container {
+  width: 95%;
+  height: 30rem;
+  margin: 1rem auto;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.svg__basic__shape {
+  width: 100%;
+  height: 100%;
+  animation: zoom .5s linear;
+  /*transform: translate(50,50);*/
+}
+
+.shape__tab {
+  width: 95%;
+  /*border: 1px solid black;*/
+}
+
+.select {
+  padding: .5rem 1rem;
+  background: var(--light-bg-color);
+  outline-color: var(--flashy-blue-color);
+}
+
+.select:active, .select:focus {
+  border: 2px solid var(--flashy-blue-color);
+}
+
+.shape__content {
+  width: 95%;
+  border-radius: 1rem;
+  background: white;
+  margin: 1rem auto;
+  padding: 1rem 0;
+}
+/*99ebff*/
+.btn {
+  border-radius: .3rem;
+  background: rgba(63,107,148,0.497);
+  color: white;
+  border: none;
+  padding: .5rem;
+  margin: .5rem;
+  font-weight: 500;
+  outline-color: rgba(63,107,148,0.497);
+}
+
+.btn__active {
+  background: var(--flashy-blue-color);
+}
+
+#select__type {
+  margin: .5rem 0 0 0;
+  font-weight: 500;
+}
+
+.select__content {
+  margin: 2rem 0 1rem;
+  /*border: 1px solid black;*/
+}
+
+.length__input {
+  font-family: times;
+  padding: .5rem;
+  border: 1px solid black;
+  margin: 0 0 .8rem 0;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.change__color__container {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-weight: 900;
+  font-family: times;
+}
+
+.change__color__content {
+  position: absolute;
+  top: 0;
+  right: 5rem;
+  font-size: .8rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: .4rem;
+  /*border: 1px solid black;*/
+}
+
+.change__color__content > p:nth-child(odd) {
+  animation: dropDownIn .5s linear;
+}
+
+.change__color__content > p:nth-child(even) {
+  animation: dropDownOut .5s linear;
+}
+
+@keyframes widthIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes dropDownIn {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropDownOut {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.change__color__content > p {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: .4rem .6rem;
+}
+
+.change__color__content p:nth-child(1) {
+  background: red;
+  color: red;
+}
+
+.change__color__content p:nth-child(2) {
+  background: green;
+  color: green;
+}
+
+.change__color__content p:nth-child(3) {
+  background: blue;
+  color: blue;
+}
+
+.change__color__content p:nth-child(4) {
+  background: yellow;
+  color: yellow;
+}
+
+.change__color__content p:nth-child(5) {
+  background: black;
+  color: black;
+}
+
+.change__color__active {
+  transform: scale(1.3);
+  box-shadow: 0 0 2rem #a3a3a3;
+}
